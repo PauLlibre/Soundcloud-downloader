@@ -16,7 +16,7 @@ FFMPEG_DOWNLOADS = {
         'bin_path': 'ffmpeg-master-latest-win64-gpl/bin/ffmpeg.exe'
     },
     'Darwin': {  # macOS
-        'url': 'https://evermeet.cx/ffmpeg/getrelease/zip',
+        'url': 'https://evermeet.cx/ffmpeg/getrelease/ffmpeg/zip',
         'bin_path': 'ffmpeg'
     }
 }
@@ -74,8 +74,7 @@ def download_ffmpeg():
     
     try:
         # Download the archive
-        archive_ext = '.zip' if system == 'Windows' else '.tar.gz'
-        archive_path = os.path.join(temp_dir, f'ffmpeg{archive_ext}')
+        archive_path = os.path.join(temp_dir, 'ffmpeg.zip')
         download_file(ffmpeg_url, archive_path)
         
         # Extract the archive
